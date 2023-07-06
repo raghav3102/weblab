@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promises</title>
+</head>
+<body>
+  <script>
+    function check() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      var loc = prompt("Enter the location"); // Change to false to simulate a rejected promise
+      if (loc.match(/paris/i)) {
+        alert("Let's take a trip to Paris");
+        resolve();
+      } else {
+       alert("Invalid Location");
+       reject();
+      }
+    }, 2);
+  });
+}
+
+check();
+
+
+  </script>
+</body>
+</html>

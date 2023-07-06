@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Operations</title>
+</head>
+<body>
+  <script>
+    function add(a, b) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+        resolve(a + b);
+        }, 1000);
+    });
+    }
+
+    function subtract(a, b) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+        resolve(a - b);
+        }, 1000);
+    });
+    }
+
+    function multiply(a, b) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+        resolve(a * b);
+        }, 1000);
+    });
+    }
+
+    async function performOperations() {
+    try {
+        var a = parseFloat(prompt("Enter number 1:"));
+        var b = parseFloat(prompt("Enter number 2:"));
+        const result1 = await add(a, b);
+        alert("Addition Result: " + result1);
+
+        const result2 = await subtract(a, b);
+        alert("Subtraction Result: " + result2);
+
+        const result3 = await multiply(a, b);
+        alert("Multiplication Result: " + result3);
+    } catch (error) {
+        alert("Error occurred:", error);
+    }
+    }
+
+    performOperations();
+
+  </script>
+</body>
+</html>

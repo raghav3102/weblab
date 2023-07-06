@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Objects vs Maps Performance Measurement</title>
+</head>
+<body>
+  <script>
+    const objStartTime = performance.now();
+    const obj = {};
+    for (let i = 0; i < 100000; i++) {
+      obj["key" + i] = "value" + i;
+    }
+    delete obj["key50000"];
+    const objEndTime = performance.now();
+    const objExecutionTime = objEndTime - objStartTime;
+   alert("Object execution time: " + objExecutionTime + " milliseconds");
+    const mapStartTime = performance.now();
+    const map = new Map();
+    for (let i = 0; i < 100000; i++) {
+      map.set("key" + i, "value" + i);
+    }
+    map.delete("key50000");
+    const mapEndTime = performance.now();
+    const mapExecutionTime = mapEndTime - mapStartTime;
+   alert("Map execution time: " + mapExecutionTime + " milliseconds");
+  </script>
+</body>
+</html>

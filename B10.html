@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visitor Count</title>
+</head>
+<body>
+  <p>Number of Visitors: <span id="visitorCount">0</span></p>
+  <script>
+    function updateVisitorCount() {
+      if (localStorage.getItem("visitorCount")) {
+        let count = parseInt(localStorage.getItem("visitorCount"));
+        count++;
+        localStorage.setItem("visitorCount", count);
+        document.getElementById("visitorCount").textContent = count;
+      } else {
+        localStorage.setItem("visitorCount", 1);
+        document.getElementById("visitorCount").textContent = 1;
+      }
+    }
+    window.onload = updateVisitorCount;
+  </script>
+</body>
+</html>

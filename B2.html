@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sets vs Arrays Performance Measurement</title>
+</head>
+<body>
+  <script>
+    const arrayStartTime = performance.now();
+    const array = [];
+    for (let i = 0; i < 1000000; i++) {
+      array.push(i);
+    }
+    const arraySearchValue = 500000;
+    const arraySearchResult = array.includes(arraySearchValue);
+
+    const arrayEndTime = performance.now();
+    const arrayExecutionTime = arrayEndTime - arrayStartTime;
+    alert("Array execution time: " + arrayExecutionTime + " milliseconds");
+    alert("Array search result: " + arraySearchResult);
+    const setStartTime = performance.now();
+    const set = new Set();
+    for (let i = 0; i < 1000000; i++) {
+      set.add(i);
+    }
+    const setSearchValue = 500000;
+    const setSearchResult = set.has(setSearchValue);
+    const setEndTime = performance.now();
+    const setExecutionTime = setEndTime - setStartTime;
+    alert("Set execution time: " + setExecutionTime + " milliseconds");
+    alert("Set search result: " + setSearchResult);
+  </script>
+</body>
+</html>

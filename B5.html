@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promises</title>
+</head>
+<body>
+  <script>
+    function bookFlight() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const isFlightBooked = true; // Change to false to simulate a rejected promise
+      if (isFlightBooked) {
+        alert("Flight booked successfully");
+        resolve();
+      } else {
+        alert("Flight booking failed");
+        reject("Flight booking failed");
+      }
+    }, 2000);
+  });
+}
+
+function bookHotel() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      alert("Hotel booked successfully");
+      resolve();
+    }, 1500); 
+  });
+}
+
+async function bookFlightAndHotel() {
+  try {
+    await bookFlight(); 
+    await bookHotel(); 
+    alert("Flight and hotel booking completed successfully");
+  } catch (error) {
+    alert("Error occurred:", error);
+  }
+}
+
+bookFlightAndHotel();
+
+
+  </script>
+</body>
+</html>

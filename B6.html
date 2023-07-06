@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conversion</title>
+  </head>
+  <body>
+    <script>
+      const convert = (weight) => {
+        const pounds = weight * 2.2;
+        alert("Your weight in Kgs is: " + pounds);
+        if(pounds > 150){
+            alert("Overweight");
+        } else if(pounds <= 150 && pounds >= 100) {
+            alert("You are Ok");
+        } else {
+            alert("Underweight");
+        }
+      }
+      const weight = parseFloat(prompt("Enter your weight in Kgs: "));
+      convert(weight);
+    </script>
+  </body>
+</html>
