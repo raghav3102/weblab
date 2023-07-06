@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Sort
+    </title>
+</head>
+<body>
+   <input type = "text" id = "input"><br>
+   <button type = "button" id = "button">Sort</button>
+   <script>
+    const inputElement = document.getElementById("input");
+    const buttonElement = document.getElementById("button");
+    buttonElement.addEventListener("click",function(){
+        const string = inputElement.value;
+        sortedString = sortString(string);
+        alert("Sorted string is: " + sortedString);
+    })
+    function sortString(str){
+        const charArray = str.split("");
+        const sortArray = charArray.sort();
+        const result = sortArray.join("");
+        return result;
+    }
+   </script>
+</body>
+</html>

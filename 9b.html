@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Set
+    </title>
+</head>
+<body>
+    <script>
+        let mySet = new Set();
+        const num1 = parseInt(prompt("Enter num1:"));
+        const num2 = parseInt(prompt("Enter num2:"));
+        const num3 = parseInt(prompt("Enter num3:"));
+        mySet.add(num1);
+        mySet.add(num2);
+        mySet.add(num3);
+        const key = parseInt(prompt("Enter the key:"));
+        if(mySet.has(key)){
+            alert(key + "is present in the set");
+        }else{
+            alert(key + " is not present in the set");
+        }
+        for(let item of mySet){
+            alert(item);
+        }
+    </script>
+</body>

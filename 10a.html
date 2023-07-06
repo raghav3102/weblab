@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        date
+    </title>
+</head>
+<body>
+    <script>
+        const str = prompt("Enter the string:");
+        const pattern = /\d{1,2}\/\d{1,2}\/\d{4}/;
+        const result = str.match(pattern);
+        if(result){
+            alert(result[0]);
+        }
+        else{
+            alert("No date found");
+        }
+    </script>
+</body>

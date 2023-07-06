@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Events
+    </title>
+</head>
+<body>
+    <button type = "button" id = "button" onclick="onClick()">Click Me</button><br>
+    <input type = "text" id = "input" onmouseout="onMouseOut()" onchange="onChange()"><br>
+    <input type = "text" id = "in" onkeydown="onKeyDown(event)"><br>
+    <p onmouseover="onMouseHover()">Hover Over Me</p><br>
+    <script>
+        function onClick(){
+            alert("You clicked the button");
+        } 
+        function onMouseHover(){
+            alert("You hovered over the text");
+        }
+        function onMouseOut(){
+            alert("You left the input area");
+        }
+        function onChange(){
+            inputElement = document.getElementById("input");
+            const val = inputElement.value;
+            alert("Value changed to: " + val);
+        }
+        function onKeyDown(event){
+            const key = event.key;
+            alert("Key pressed is: " + key);
+        }
+    </script>
+</body>
+</html>

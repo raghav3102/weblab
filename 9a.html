@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+	<head>
+		<title>Leap Year</title>
+	</head>
+	<body>
+		<script>
+			const start = parseInt(prompt("Enter start year"));
+			const end = parseInt(prompt("Enter end year:"));
+			let arr = [];
+			for(let i = start;i <= end; i++){
+				if(i % 4 == 0){
+					arr.push(i);
+				}
+			}
+			alert("Leap years in given range are: " + arr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Map
+    </title>
+</head>
+<body>
+    <script>
+        const myMap = new Map();
+        const iname = prompt("Enter name:");
+        const iage = parseInt(prompt("Enter age:"));
+        const icity = prompt("Enter city:");
+        myMap.set("name",iname);
+        myMap.set("age",iage);
+        myMap.set("city",icity);
+        const se = prompt("Enter the key (name,age,city)");
+        if(myMap.has(se)){
+            const k = myMap.get(se);
+            alert(k);
+        }else{
+            alert("Key not found");
+        }
+        for(const [key,value] of myMap.entries()){
+            document.write("Key:" + key + "Value:" + value + "<br>");
+        }
+    </script>
+</body>

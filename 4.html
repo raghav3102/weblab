@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Jump Search
+    </title>
+</head>
+<body>
+    <script>
+        const jumpsearch = (arr,key) => {
+            const n = arr.length;
+            const step = Math.sqrt(n);
+            const minstep = Math.min(step,n)-1;
+            let prev = 0;
+            for(var i=minstep;arr[i] < key;i--){
+                prev = step;
+                step += Math.sqrt(n);
+                if(prev >= n){
+                    return -1;
+                }
+            }
+            while(arr[prev] < key){
+                prev++;
+                if(prev == Math.min(step,n)){
+                    return -1;
+                }
+            }
+            if(arr[prev] == key){
+                return prev;
+            }
+            return -1;
+        }
+        let arr = prompt("Enter the numbers seperated by space: ").split(" ").map(Number);
+        let key = parseInt(prompt("Enter the key:"));
+        let result = jumpsearch(arr,key);
+        if(result != -1){
+            alert(key + " found at index " + result);
+        } else {
+            alert(key + " not found");
+        }
+    </script>
+</body>
+</html>
